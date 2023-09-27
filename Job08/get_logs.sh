@@ -1,10 +1,12 @@
-Date=$(date +%d-%m-%Y-%H:%M)
-grep "session opened for user anthony" /var/log/auth.log | wc -l > number_connection-$Date
+#!/usr/bin/bash
 
-if [ ! -f Backup/number_connection-Date.tar ]
+Date=$(date +%d-%m-%Y-%H:%M)
+grep "session opened for user anthony" /var/log/auth.log | wc -l > /mnt/c/Users/mabbo/Bureau/shell-exe/Job08/number_connection-$Date
+
+if [ ! -f /mnt/c/Users/mabbo/Bureau/shell-exe/Job08/Backup/number_connection-Date.tar ]
 then
-	tar -cvf Backup/number_connection-Date.tar number_connection-$Date
+	tar -cvf /mnt/c/Users/mabbo/Bureau/shell-exe/Job08/Backup/number_connection-Date.tar /mnt/c/Users/mabbo/Bureau/shell-exe/Job08/number_connection-$Date
 else
-	tar -uvf Backup/number_connection-Date.tar number_connection-$Date
+	tar -uvf /mnt/c/Users/mabbo/Bureau/shell-exe/Job08/Backup/number_connection-Date.tar /mnt/c/Users/mabbo/Bureau/shell-exe/Job08/number_connection-$Date
 fi
-rm number_connection-$Date
+rm /mnt/c/Users/mabbo/Bureau/shell-exe/Job08/number_connection-$Date
