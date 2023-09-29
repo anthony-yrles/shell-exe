@@ -23,7 +23,7 @@ do
 	role=$(echo "$roleList" | cut -d $'\n' -f $i)
 	user=$(echo $prenom $nom)
 		
-	if [ "$role" != "User" ]
+	if [ "$role" == "Admin" ]
 	then
 		groups="Admin"
 	else
